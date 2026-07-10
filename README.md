@@ -80,7 +80,3 @@ vllm-metrics (CLI)
 ├── vllm_metrics.dashboard   → MetricsCollector + Dashboard (Rich panels)
 └── vllm_metrics.cli         → CLI entry point + Live loop
 ```
-
-## Лицензия
-
-MIT
