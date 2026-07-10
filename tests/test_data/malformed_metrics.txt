@@ -1,0 +1,32 @@
+# This is a malformed metrics file for testing edge cases
+
+# Valid metric
+valid_metric 42
+
+# Missing value
+broken_metric{label="test"}
+
+# No name
+{label="test"} 1.0
+
+# Random garbage
+this is not a metric at all
+
+# Empty lines above and below
+
+
+
+# Valid with scientific notation
+sci_metric 1.5e10
+
+# Negative value
+negative_metric -3.14
+
+# Metric with special chars in label value
+special_label{name="test\"quote"} 1.0
+
+# Just a number
+12345
+
+# Comment only
+# nothing here

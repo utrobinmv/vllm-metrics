@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-metrics"
+version = "0.1.0"
+description = "Real-time console monitoring dashboard for vLLM servers"
+readme = "README.md"
+authors = [
+    {name = "krapotkin"},
+]
+requires-python = ">=3.11"
+dependencies = [
+    "rich>=13.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Monitoring",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-httpserver>=1.0.0",
+]
+
+[project.scripts]
+vllm-metrics = "vllm_metrics.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/krapotkin/vllm-metrics"
+Repository = "https://github.com/krapotkin/vllm-metrics"
+Issues = "https://github.com/krapotkin/vllm-metrics/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

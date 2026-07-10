@@ -1,0 +1,238 @@
+# HELP vllm:num_requests_running Number of requests currently running on GPU.
+# TYPE vllm:num_requests_running gauge
+vllm:num_requests_running 3
+# HELP vllm:num_requests_waiting Number of requests waiting to be processed.
+# TYPE vllm:num_requests_waiting gauge
+vllm:num_requests_waiting 1
+# HELP vllm:kv_cache_usage_perc KV cache usage percentage.
+# TYPE vllm:kv_cache_usage_perc gauge
+vllm:kv_cache_usage_perc 0.527
+# HELP vllm:engine_sleep_state Engine sleep state.
+# TYPE vllm:engine_sleep_state gauge
+vllm:engine_sleep_state{sleep_state="awake"} 1
+vllm:engine_sleep_state{sleep_state="weights_offloaded"} 0
+vllm:engine_sleep_state{sleep_state="discard_all"} 0
+# HELP vllm:estimated_flops_per_gpu_total Estimated FLOPs per GPU.
+# TYPE vllm:estimated_flops_per_gpu_total counter
+vllm:estimated_flops_per_gpu_total 1.5e15
+# HELP vllm:prompt_tokens_total Total prompt tokens processed.
+# TYPE vllm:prompt_tokens_total counter
+vllm:prompt_tokens_total 28030000
+# HELP vllm:generation_tokens_total Total generation tokens produced.
+# TYPE vllm:generation_tokens_total counter
+vllm:generation_tokens_total 258100
+# HELP vllm:prompt_tokens_cached_total Total prompt tokens served from cache.
+# TYPE vllm:prompt_tokens_cached_total counter
+vllm:prompt_tokens_cached_total 12370000
+# HELP vllm:request_success_total Total successful requests.
+# TYPE vllm:request_success_total counter
+vllm:request_success_total{finished_reason="stop"} 336
+vllm:request_success_total{finished_reason="length"} 0
+vllm:request_success_total{finished_reason="error"} 0
+# HELP vllm:num_preemptions_total Total preemptions.
+# TYPE vllm:num_preemptions_total counter
+vllm:num_preemptions_total 19
+# HELP vllm:avg_prompt_throughput_toks_per_s Average prompt throughput.
+# TYPE vllm:avg_prompt_throughput_toks_per_s gauge
+vllm:avg_prompt_throughput_toks_per_s 12.4
+# HELP vllm:avg_generation_throughput_toks_per_s Average generation throughput.
+# TYPE vllm:avg_generation_throughput_toks_per_s gauge
+vllm:avg_generation_throughput_toks_per_s 8.1
+# HELP vllm:num_requests_swapped Number of swapped requests.
+# TYPE vllm:num_requests_swapped gauge
+vllm:num_requests_swapped 0
+# HELP vllm:time_since_last_ppu_update Time since last PPU update.
+# TYPE vllm:time_since_last_ppu_update gauge
+vllm:time_since_last_ppu_update 2.0
+# HELP vllm:prefix_cache_queries_total Prefix cache queries.
+# TYPE vllm:prefix_cache_queries_total counter
+vllm:prefix_cache_queries_total 5990000000
+# HELP vllm:prefix_cache_hits_total Prefix cache hits.
+# TYPE vllm:prefix_cache_hits_total counter
+vllm:prefix_cache_hits_total 108720000
+# HELP vllm:external_prefix_cache_queries_total External prefix cache queries.
+# TYPE vllm:external_prefix_cache_queries_total counter
+vllm:external_prefix_cache_queries_total 0
+# HELP vllm:external_prefix_cache_hits_total External prefix cache hits.
+# TYPE vllm:external_prefix_cache_hits_total counter
+vllm:external_prefix_cache_hits_total 0
+# HELP vllm:mm_cache_queries_total Multi-modal cache queries.
+# TYPE vllm:mm_cache_queries_total counter
+vllm:mm_cache_queries_total 0
+# HELP vllm:mm_cache_hits_total Multi-modal cache hits.
+# TYPE vllm:mm_cache_hits_total counter
+vllm:mm_cache_hits_total 0
+# HELP vllm:prompt_tokens_by_source_total Prompt tokens by source.
+# TYPE vllm:prompt_tokens_by_source_total counter
+vllm:prompt_tokens_by_source_total{source="local_compute"} 15660000
+vllm:prompt_tokens_by_source_total{source="local_cache_hit"} 12370000
+# HELP vllm:time_to_first_token_seconds Time to first token.
+# TYPE vllm:time_to_first_token_seconds histogram
+vllm:time_to_first_token_seconds_bucket{le="0.001"} 0
+vllm:time_to_first_token_seconds_bucket{le="0.005"} 10
+vllm:time_to_first_token_seconds_bucket{le="0.01"} 50
+vllm:time_to_first_token_seconds_bucket{le="0.02"} 100
+vllm:time_to_first_token_seconds_bucket{le="0.05"} 200
+vllm:time_to_first_token_seconds_bucket{le="0.1"} 300
+vllm:time_to_first_token_seconds_bucket{le="0.2"} 400
+vllm:time_to_first_token_seconds_bucket{le="0.5"} 500
+vllm:time_to_first_token_seconds_bucket{le="1.0"} 600
+vllm:time_to_first_token_seconds_bucket{le="2.5"} 700
+vllm:time_to_first_token_seconds_bucket{le="5.0"} 800
+vllm:time_to_first_token_seconds_bucket{le="10.0"} 900
+vllm:time_to_first_token_seconds_bucket{le="+Inf"} 1000
+vllm:time_to_first_token_seconds_sum 3500.0
+vllm:time_to_first_token_seconds_count 1000
+# HELP vllm:inter_token_latency_seconds Inter-token latency.
+# TYPE vllm:inter_token_latency_seconds histogram
+vllm:inter_token_latency_seconds_bucket{le="0.001"} 50
+vllm:inter_token_latency_seconds_bucket{le="0.01"} 500
+vllm:inter_token_latency_seconds_bucket{le="0.05"} 1500
+vllm:inter_token_latency_seconds_bucket{le="0.1"} 2500
+vllm:inter_token_latency_seconds_bucket{le="0.5"} 3000
+vllm:inter_token_latency_seconds_bucket{le="1.0"} 3200
+vllm:inter_token_latency_seconds_bucket{le="+Inf"} 3300
+vllm:inter_token_latency_seconds_sum 150.0
+vllm:inter_token_latency_seconds_count 3300
+# HELP vllm:e2e_request_latency_seconds End-to-end request latency.
+# TYPE vllm:e2e_request_latency_seconds histogram
+vllm:e2e_request_latency_seconds_bucket{le="1.0"} 10
+vllm:e2e_request_latency_seconds_bucket{le="5.0"} 100
+vllm:e2e_request_latency_seconds_bucket{le="10.0"} 200
+vllm:e2e_request_latency_seconds_bucket{le="30.0"} 300
+vllm:e2e_request_latency_seconds_bucket{le="60.0"} 400
+vllm:e2e_request_latency_seconds_bucket{le="120.0"} 500
+vllm:e2e_request_latency_seconds_bucket{le="+Inf"} 600
+vllm:e2e_request_latency_seconds_sum 25000.0
+vllm:e2e_request_latency_seconds_count 600
+# HELP vllm:request_prefill_time_seconds Prefill time.
+# TYPE vllm:request_prefill_time_seconds histogram
+vllm:request_prefill_time_seconds_bucket{le="0.1"} 50
+vllm:request_prefill_time_seconds_bucket{le="0.5"} 200
+vllm:request_prefill_time_seconds_bucket{le="1.0"} 350
+vllm:request_prefill_time_seconds_bucket{le="5.0"} 500
+vllm:request_prefill_time_seconds_bucket{le="+Inf"} 600
+vllm:request_prefill_time_seconds_sum 800.0
+vllm:request_prefill_time_seconds_count 600
+# HELP vllm:request_decode_time_seconds Decode time.
+# TYPE vllm:request_decode_time_seconds histogram
+vllm:request_decode_time_seconds_bucket{le="1.0"} 100
+vllm:request_decode_time_seconds_bucket{le="5.0"} 300
+vllm:request_decode_time_seconds_bucket{le="10.0"} 450
+vllm:request_decode_time_seconds_bucket{le="30.0"} 550
+vllm:request_decode_time_seconds_bucket{le="+Inf"} 600
+vllm:request_decode_time_seconds_sum 5000.0
+vllm:request_decode_time_seconds_count 600
+# HELP vllm:request_queue_time_seconds Queue time.
+# TYPE vllm:request_queue_time_seconds histogram
+vllm:request_queue_time_seconds_bucket{le="0.001"} 100
+vllm:request_queue_time_seconds_bucket{le="0.01"} 300
+vllm:request_queue_time_seconds_bucket{le="0.1"} 500
+vllm:request_queue_time_seconds_bucket{le="1.0"} 590
+vllm:request_queue_time_seconds_bucket{le="+Inf"} 600
+vllm:request_queue_time_seconds_sum 10.0
+vllm:request_queue_time_seconds_count 600
+# HELP vllm:request_inference_time_seconds Inference time.
+# TYPE vllm:request_inference_time_seconds histogram
+vllm:request_inference_time_seconds_bucket{le="1.0"} 50
+vllm:request_inference_time_seconds_bucket{le="5.0"} 200
+vllm:request_inference_time_seconds_bucket{le="10.0"} 400
+vllm:request_inference_time_seconds_bucket{le="30.0"} 550
+vllm:request_inference_time_seconds_bucket{le="+Inf"} 600
+vllm:request_inference_time_seconds_sum 4000.0
+vllm:request_inference_time_seconds_count 600
+# HELP vllm:request_time_per_output_token_seconds Time per output token.
+# TYPE vllm:request_time_per_output_token_seconds histogram
+vllm:request_time_per_output_token_seconds_bucket{le="0.001"} 100
+vllm:request_time_per_output_token_seconds_bucket{le="0.01"} 500
+vllm:request_time_per_output_token_seconds_bucket{le="0.05"} 1500
+vllm:request_time_per_output_token_seconds_bucket{le="0.1"} 2500
+vllm:request_time_per_output_token_seconds_bucket{le="+Inf"} 3000
+vllm:request_time_per_output_token_seconds_sum 100.0
+vllm:request_time_per_output_token_seconds_count 3000
+# HELP vllm:request_prompt_tokens Prompt tokens per request.
+# TYPE vllm:request_prompt_tokens histogram
+vllm:request_prompt_tokens_bucket{le="32"} 100
+vllm:request_prompt_tokens_bucket{le="128"} 300
+vllm:request_prompt_tokens_bucket{le="512"} 500
+vllm:request_prompt_tokens_bucket{le="2048"} 700
+vllm:request_prompt_tokens_bucket{le="+Inf"} 1000
+vllm:request_prompt_tokens_sum 500000.0
+vllm:request_prompt_tokens_count 1000
+# HELP vllm:request_generation_tokens Generation tokens per request.
+# TYPE vllm:request_generation_tokens histogram
+vllm:request_generation_tokens_bucket{le="16"} 200
+vllm:request_generation_tokens_bucket{le="64"} 500
+vllm:request_generation_tokens_bucket{le="256"} 800
+vllm:request_generation_tokens_bucket{le="1024"} 950
+vllm:request_generation_tokens_bucket{le="+Inf"} 1000
+vllm:request_generation_tokens_sum 250000.0
+vllm:request_generation_tokens_count 1000
+# HELP vllm:iteration_tokens_total Tokens per iteration.
+# TYPE vllm:iteration_tokens_total histogram
+vllm:iteration_tokens_total_bucket{le="8"} 500
+vllm:iteration_tokens_total_bucket{le="64"} 1500
+vllm:iteration_tokens_total_bucket{le="256"} 2500
+vllm:iteration_tokens_total_bucket{le="+Inf"} 3000
+vllm:iteration_tokens_total_sum 150000.0
+vllm:iteration_tokens_total_count 3000
+# HELP vllm:request_prefill_kv_computed_tokens KV computed tokens per prefill.
+# TYPE vllm:request_prefill_kv_computed_tokens histogram
+vllm:request_prefill_kv_computed_tokens_bucket{le="128"} 100
+vllm:request_prefill_kv_computed_tokens_bucket{le="512"} 300
+vllm:request_prefill_kv_computed_tokens_bucket{le="2048"} 600
+vllm:request_prefill_kv_computed_tokens_bucket{le="+Inf"} 1000
+vllm:request_prefill_kv_computed_tokens_sum 450000.0
+vllm:request_prefill_kv_computed_tokens_count 1000
+# HELP vllm:request_max_num_generation_tokens Max generation tokens requested.
+# TYPE vllm:request_max_num_generation_tokens histogram
+vllm:request_max_num_generation_tokens_bucket{le="64"} 200
+vllm:request_max_num_generation_tokens_bucket{le="256"} 500
+vllm:request_max_num_generation_tokens_bucket{le="1024"} 900
+vllm:request_max_num_generation_tokens_bucket{le="+Inf"} 1000
+vllm:request_max_num_generation_tokens_sum 500000.0
+vllm:request_max_num_generation_tokens_count 1000
+# HELP vllm:request_params_max_tokens max_tokens parameter.
+# TYPE vllm:request_params_max_tokens histogram
+vllm:request_params_max_tokens_bucket{le="64"} 100
+vllm:request_params_max_tokens_bucket{le="256"} 400
+vllm:request_params_max_tokens_bucket{le="1024"} 800
+vllm:request_params_max_tokens_bucket{le="+Inf"} 1000
+vllm:request_params_max_tokens_sum 1000000.0
+vllm:request_params_max_tokens_count 1000
+# HELP http_requests_total HTTP requests.
+# TYPE http_requests_total counter
+http_requests_total{method="POST",status="200"} 355
+http_requests_total{method="GET",status="200"} 10
+# HELP http_request_duration_highr_seconds HTTP request duration.
+# TYPE http_request_duration_highr_seconds histogram
+http_request_duration_highr_seconds_bucket{le="0.1"} 50
+http_request_duration_highr_seconds_bucket{le="1.0"} 200
+http_request_duration_highr_seconds_bucket{le="10.0"} 300
+http_request_duration_highr_seconds_bucket{le="60.0"} 350
+http_request_duration_highr_seconds_bucket{le="+Inf"} 365
+http_request_duration_highr_seconds_sum 5000.0
+http_request_duration_highr_seconds_count 365
+# HELP process_virtual_memory_bytes Virtual memory.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.36e+10
+# HELP process_resident_memory_bytes Resident memory.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 2.78e+09
+# HELP process_cpu_seconds_total CPU time.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 1234.56
+# HELP process_open_fds Open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 64
+# HELP process_max_fds Max file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1048576
+# HELP process_start_time_seconds Process start time.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1720000000.0
+# HELP python_gc_collections_total GC collections.
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 4052
+python_gc_collections_total{generation="1"} 368
+python_gc_collections_total{generation="2"} 11
